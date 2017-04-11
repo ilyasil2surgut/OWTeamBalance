@@ -6,156 +6,186 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>640</width>
-    <height>581</height>
+    <width>482</width>
+    <height>511</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QListWidget" name="listWidget_team1">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>80</y>
-      <width>241</width>
-      <height>331</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QListWidget" name="listWidget_team2">
-    <property name="geometry">
-     <rect>
-      <x>290</x>
-      <y>80</y>
-      <width>231</width>
-      <height>331</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QPushButton" name="pushButton_balance">
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>490</y>
-      <width>93</width>
-      <height>28</height>
+      <y>387</y>
+      <width>411</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
      <string>Balance</string>
     </property>
    </widget>
-   <widget class="QWidget" name="layoutWidget">
+   <widget class="QSplitter" name="splitter_11">
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>40</y>
-      <width>491</width>
-      <height>30</height>
+      <y>320</y>
+      <width>411</width>
+      <height>61</height>
      </rect>
     </property>
-    <layout class="QHBoxLayout" name="horizontalLayout">
-     <item>
-      <widget class="QLineEdit" name="lineEdit_name"/>
-     </item>
-     <item>
-      <widget class="QLineEdit" name="lineEdit_SR"/>
-     </item>
-     <item>
-      <widget class="QPushButton" name="pushButton_add">
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+    <widget class="QSplitter" name="splitter_10">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <widget class="QSplitter" name="splitter_8">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="QLabel" name="label_3">
        <property name="text">
-        <string>Add</string>
+        <string>Team 1 SR</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
        </property>
       </widget>
-     </item>
-    </layout>
+      <widget class="QLabel" name="label_team1SR">
+       <property name="text">
+        <string>SR</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QSplitter" name="splitter_9">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="QLabel" name="label_4">
+       <property name="text">
+        <string>Team 2 SR</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_team2SR">
+       <property name="text">
+        <string>SR</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QSplitter" name="splitter_3">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <widget class="QLabel" name="label_5">
+      <property name="text">
+       <string>Метод расчёта</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="comboBox_calcmethod">
+      <item>
+       <property name="text">
+        <string>Среднее геометрическое</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Среднее арифметическое</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Среднее геометрическое и среднее арифметическое</string>
+       </property>
+      </item>
+     </widget>
+    </widget>
    </widget>
-   <widget class="QWidget" name="layoutWidget">
+   <widget class="QSplitter" name="splitter_6">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>47</y>
+      <width>421</width>
+      <height>261</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+    <widget class="QListWidget" name="listWidget_team1"/>
+    <widget class="QListWidget" name="listWidget_team2"/>
+   </widget>
+   <widget class="QSplitter" name="splitter_4">
     <property name="geometry">
      <rect>
       <x>30</x>
       <y>10</y>
-      <width>611</width>
-      <height>18</height>
+      <width>421</width>
+      <height>28</height>
      </rect>
     </property>
-    <layout class="QHBoxLayout" name="horizontalLayout_2">
-     <item>
-      <widget class="QLabel" name="label">
-       <property name="text">
-        <string>Playername</string>
-       </property>
-      </widget>
-     </item>
-     <item>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+    <widget class="QSplitter" name="splitter_2">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <widget class="QWidget" name="">
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>Игрок</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lineEdit_name"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QSplitter" name="splitter">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
       <widget class="QLabel" name="label_2">
        <property name="text">
         <string>SR</string>
        </property>
       </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="label_left">
-       <property name="text">
-        <string>Left</string>
+      <widget class="QLineEdit" name="lineEdit_SR">
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QLabel" name="label_3">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>420</y>
-      <width>91</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Team 1 SR</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_team1SR">
-    <property name="geometry">
-     <rect>
-      <x>140</x>
-      <y>420</y>
-      <width>55</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>SR</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_4">
-    <property name="geometry">
-     <rect>
-      <x>300</x>
-      <y>420</y>
-      <width>71</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Team 2 SR</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_team2SR">
-    <property name="geometry">
-     <rect>
-      <x>390</x>
-      <y>420</y>
-      <width>55</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>SR</string>
-    </property>
+     </widget>
+    </widget>
+    <widget class="QPushButton" name="pushButton_add">
+     <property name="text">
+      <string>Добавить</string>
+     </property>
+    </widget>
    </widget>
    <zorder>layoutWidget</zorder>
    <zorder>layoutWidget</zorder>
@@ -166,13 +196,15 @@
    <zorder>label_team1SR</zorder>
    <zorder>label_4</zorder>
    <zorder>label_team2SR</zorder>
+   <zorder>label_5</zorder>
+   <zorder>comboBox_calcmethod</zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>640</width>
+     <width>482</width>
      <height>26</height>
     </rect>
    </property>

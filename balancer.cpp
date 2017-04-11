@@ -4,6 +4,7 @@
 Balancer::Balancer()
 {
     size=0;
+    calculatemethod=0;
 }
 
 void Balancer::addPlayer(QString str, int n)
@@ -14,9 +15,11 @@ void Balancer::addPlayer(QString str, int n)
     }
 }
 
-void Balancer::BalanceTeams()
+void Balancer::BalanceTeams(int method=0)
 {
+    calculatemethod=method;
     if (size==12){
+        qDebug()<<"Calculate Method:"<<calculatemethod;
         double team1SR=0,team2SR=5000;
         double bestdifference=5000;
         std::array<Player,6> bestteam1,bestteam2;
@@ -84,11 +87,33 @@ bool Balancer::check6bits(int X)
 
 double Balancer::average(std::array<Player, 6> team)
 {
-    double total=0;
-    for(int i=0;i<6;i++){
-        total+=team[i].mmr;
+    double total;
+    if(calculatemethod==0){//arithmetic average
+        total=0;
+        for(int i=0;i<6;i++){
+            total+=team[i].mmr;
+        }
+        return total/6;
     }
-    return total/6;
+    else if(calculatemethod==1){//geometric average
+        total=1;
+        for(int i=0;i<6;i++){
+            total*=team[i].mmr;
+        }
+        return pow(total,0.1666667);
+    }
+    else if(calculatemethod==2){//both
+        double Atotal=0;
+        double Gtotal=1;
+        for(int i=0;i<6;i++){
+            Gtotal*=team[i].mmr;
+        }
+        for(int i=0;i<6;i++){
+            Atotal+=team[i].mmr;
+        }
+        total=(Atotal/6+pow(Gtotal,0.1666667))/2;
+        return total;
+    }
 }
 
 double Balancer::getteam1SR()

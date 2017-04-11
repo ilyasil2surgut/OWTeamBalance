@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <balancer.h>
+#include <QMessageBox>
 namespace Ui {
 class MainWindow;
 }
