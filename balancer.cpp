@@ -19,7 +19,6 @@ void Balancer::BalanceTeams(int method=0)
 {
     calculatemethod=method;
     if (size==12){
-        qDebug()<<"Calculate Method:"<<calculatemethod;
         double team1SR=0,team2SR=5000;
         double bestdifference=5000;
         std::array<Player,6> bestteam1,bestteam2;
@@ -33,13 +32,21 @@ void Balancer::BalanceTeams(int method=0)
             matrix++;
             if(check6bits(matrix)){
                 setTeams(matrix);
-                difference=abs(average(team1)-average(team2));
+                difference=abs(average(team1)-average(team2));                
                 if(difference<bestdifference){
                     bestteam1=team1;
                     bestteam2=team2;
-                    bestdifference=difference;
+                    bestdifference=difference;                    
+                    qDebug()<<matrix<<"New best combination"<<average(team1)<<average(team2)<<difference;
                 }
             }
+        }
+        if(calculatemethod==1){
+            double total=1;
+            for(int i=0;i<6;i++){
+                total*=team1[i].mmr;
+            }
+            qDebug()<<total<<"Geometric average"<<average(team1)<<average(team2)<<difference;
         }
         team1=bestteam1;
         team2=bestteam2;

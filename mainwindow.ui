@@ -104,12 +104,12 @@
      <widget class="QComboBox" name="comboBox_calcmethod">
       <item>
        <property name="text">
-        <string>Среднее геометрическое</string>
+        <string>Среднее арифметическое</string>
        </property>
       </item>
       <item>
        <property name="text">
-        <string>Среднее арифметическое</string>
+        <string>Среднее геометрическое</string>
        </property>
       </item>
       <item>
