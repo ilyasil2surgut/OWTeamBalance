@@ -15,13 +15,11 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     balancer.cpp \
-    player.cpp \
-    matrix.cpp
+    player.cpp
 
 HEADERS  += mainwindow.h \
     balancer.h \
-    player.h \
-    matrix.h
+    player.h
 
 FORMS    += mainwindow.ui
 CONFIG+= c++11
