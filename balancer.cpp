@@ -37,7 +37,7 @@ void Balancer::BalanceTeams(int method=0)
                     bestteam1=team1;
                     bestteam2=team2;
                     bestdifference=difference;                    
-                    qDebug()<<matrix<<"New best combination"<<average(team1)<<average(team2)<<difference;
+//                    qDebug()<<matrix<<"New best combination"<<average(team1)<<average(team2)<<difference;
                 }
             }
         }
@@ -46,7 +46,7 @@ void Balancer::BalanceTeams(int method=0)
             for(int i=0;i<6;i++){
                 total*=team1[i].mmr;
             }
-            qDebug()<<total<<"Geometric average"<<average(team1)<<average(team2)<<difference;
+//            qDebug()<<total<<"Geometric average"<<average(team1)<<average(team2)<<difference;
         }
         team1=bestteam1;
         team2=bestteam2;
