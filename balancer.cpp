@@ -33,7 +33,7 @@ void Balancer::BalanceTeams()
         setTeams(matrix,tempteam1,tempteam2);
         double bestdifference=abs(average(tempteam1)-average(tempteam2));
         double difference=bestdifference;
-        qDebug()<<"Balancing"<<difference;
+//        qDebug()<<"Balancing"<<difference;
         team1->setlist(tempteam1);
         team2->setlist(tempteam2);
         while(matrix<64512){
@@ -42,7 +42,7 @@ void Balancer::BalanceTeams()
                 setTeams(matrix,tempteam1,tempteam2);
                 difference=abs(average(tempteam1)-average(tempteam2));
                 if(difference<bestdifference){
-                    qDebug()<<"New best "<<matrix<<difference;
+//                    qDebug()<<"New best "<<matrix<<difference;
                     bestdifference=difference;
                     team1->setlist(tempteam1);
                     team2->setlist(tempteam2);
