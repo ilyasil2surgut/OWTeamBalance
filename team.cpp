@@ -2,7 +2,6 @@
 
 Team::Team(QListWidget *listwidget, QLabel *label)
 {
-    size=0;
     widget=listwidget;
     SRlabel=label;
     calculatemethod=0;
@@ -15,14 +14,20 @@ int Team::getsize()
 
 Player *Team::getplayer(int i)
 {
-    if(i<size)return players[i];
+    return players[i];
+}
+
+void Team::setplayer(int i, Player *p)
+{
+    players[i]=p;
+    renewSRlabel();
+    renewlistwidget();
 }
 
 void Team::addplayer(Player *newplayer)
 {
     players.append(newplayer);
     widget->addItem(newplayer->text());
-    size++;
     renewSRlabel();
 }
 
@@ -79,6 +84,22 @@ void Team::renewSRlabel()
 {
     if(getsize()>0)SRlabel->setText(QString::number(countSR()));
     else SRlabel->setText(QString::number(0));
+}
+
+void Team::clear()
+{
+    players.clear();
+    widget->clear();
+    renewSRlabel();
+}
+
+Player *Team::pop(int i)
+{
+    Player* p=players[i];
+    players.removeAt(i);
+    renewSRlabel();
+    renewlistwidget();
+    return p;
 }
 
 void Team::renewlistwidget()

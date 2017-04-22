@@ -10,16 +10,18 @@ public:
     Team(QListWidget*,QLabel*);
     int getsize();
     Player *getplayer(int i);
+    void setplayer(int i,Player *);
     void addplayer(Player*);
     double countSR();
     void setcalculatemethod(int);
     QList<Player*> getlist();
     void setlist(QList<Player*>);
     void renewSRlabel();
+    void clear();
+    Player* pop(int);
 private:
 
     void renewlistwidget();
-    int size;
     QListWidget* widget;
     QLabel* SRlabel;
     QList<Player*> players;

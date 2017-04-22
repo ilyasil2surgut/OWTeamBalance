@@ -18,6 +18,11 @@ public:
     double getteam1SR();
     double getteam2SR();
     void setcalculatemethod(int);
+    void clear();
+    void swap(int,int);
+    Team* getteam1();
+    Team *getteam2();
+    void remove(Player *p);
 private:
     int getbit(unsigned int X, int n);
     bool check6bits(int X);

@@ -130,3 +130,38 @@ void Balancer::setcalculatemethod(int method)
     team2->renewSRlabel();
 }
 
+void Balancer::clear()
+{
+    unbalanced.clear();
+    size=0;
+    team1->clear();
+    team2->clear();
+}
+
+void Balancer::swap(int i1, int i2)
+{
+    Player* p=team2->getplayer(i2);
+    team2->setplayer(i2,team1->getplayer(i1));
+    team1->setplayer(i1,p);
+}
+
+Team *Balancer::getteam1()
+{
+    return team1;
+}
+
+Team *Balancer::getteam2()
+{
+    return team2;
+}
+
+void Balancer::remove(Player *p)
+{
+    for(int i=0;i<unbalanced.size();i++){
+        if(unbalanced[i]==p){
+            unbalanced.removeAt(i);
+            size--;
+        }
+    }
+}
+

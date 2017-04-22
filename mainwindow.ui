@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>482</width>
-    <height>511</height>
+    <width>490</width>
+    <height>581</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -202,17 +202,73 @@
      </property>
     </widget>
    </widget>
+   <widget class="QPushButton" name="pushButton_clear">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>460</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Очистить</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_swap">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>460</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Swap</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_remove">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>460</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Удалить</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_remove2">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>460</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Удалить</string>
+    </property>
+   </widget>
    <zorder>splitter_11</zorder>
    <zorder>splitter_6</zorder>
    <zorder>splitter_4</zorder>
    <zorder>pushButton_balance</zorder>
+   <zorder>pushButton_clear</zorder>
+   <zorder>pushButton_swap</zorder>
+   <zorder>pushButton_remove</zorder>
+   <zorder>pushButton_remove2</zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>482</width>
+     <width>490</width>
      <height>26</height>
     </rect>
    </property>
