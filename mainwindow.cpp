@@ -30,7 +30,11 @@ void MainWindow::on_pushButton_add_clicked()
 {
     if(balance->getsize()<12){
         if((ui->lineEdit_SR->text().toInt()>5000)||(ui->lineEdit_SR->text().toInt()<=0)) errormessage("Недопустимое значение SR");
-        else balance->addPlayer(ui->lineEdit_name->text(),ui->lineEdit_SR->text().toInt());
+        else{
+            balance->addPlayer(ui->lineEdit_name->text(),ui->lineEdit_SR->text().toInt());
+            ui->lineEdit_name->clear();
+            ui->lineEdit_SR->clear();
+        }
     }
     else errormessage("Слишком много игроков");
 }

@@ -113,41 +113,6 @@
      <string>Очистить всё</string>
     </property>
    </widget>
-   <widget class="QSplitter" name="splitter_3">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>399</y>
-      <width>501</width>
-      <height>32</height>
-     </rect>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
-    </property>
-    <widget class="QLabel" name="label_5">
-     <property name="text">
-      <string>Метод расчёта</string>
-     </property>
-    </widget>
-    <widget class="QComboBox" name="comboBox_calcmethod">
-     <item>
-      <property name="text">
-       <string>Среднее арифметическое</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Среднее геометрическое</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Среднее геометрическое и среднее арифметическое</string>
-      </property>
-     </item>
-    </widget>
-   </widget>
    <widget class="QSplitter" name="splitter_8">
     <property name="geometry">
      <rect>
@@ -192,7 +157,7 @@
       </widget>
      </widget>
     </widget>
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget">
      <layout class="QGridLayout" name="gridLayout">
       <item row="0" column="0">
        <spacer name="verticalSpacer">
@@ -268,16 +233,49 @@
      </widget>
     </widget>
    </widget>
-   <zorder>splitter_11</zorder>
-   <zorder>splitter_6</zorder>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>399</y>
+      <width>88</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Метод расчёта</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="comboBox_calcmethod">
+    <property name="geometry">
+     <rect>
+      <x>137</x>
+      <y>399</y>
+      <width>391</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>Среднее арифметическое</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Среднее геометрическое</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Среднее геометрическое и среднее арифметическое</string>
+     </property>
+    </item>
+   </widget>
+   <zorder>splitter_3</zorder>
+   <zorder>splitter_8</zorder>
    <zorder>splitter_4</zorder>
    <zorder>pushButton_balance</zorder>
    <zorder>pushButton_clear</zorder>
-   <zorder>pushButton_swap</zorder>
-   <zorder>pushButton_remove</zorder>
-   <zorder>pushButton_remove2</zorder>
-   <zorder>verticalSpacer</zorder>
-   <zorder>verticalSpacer_2</zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
