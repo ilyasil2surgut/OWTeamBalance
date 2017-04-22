@@ -10,6 +10,7 @@ MainWindow::MainWindow(QWidget *parent) :
     setWindowIcon(QIcon(QPixmap(":/icon/icon.png")));
     ui->label_team1SR->setText(QString("0"));
     ui->label_team2SR->setText(QString("0"));
+    balance=new Balancer(new Team(ui->listWidget_team1,ui->label_team1SR),new Team(ui->listWidget_team2,ui->label_team2SR));
 }
 
 MainWindow::~MainWindow()
@@ -19,16 +20,8 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_balance_clicked()
 {
-    if(balance.getsize()==12){
-        ui->listWidget_team1->clear();
-        ui->listWidget_team2->clear();
-        balance.BalanceTeams(ui->comboBox_calcmethod->currentIndex());
-        for(int i=0;i<6;i++){
-            ui->listWidget_team1->addItem(balance.team1[i].text());
-            ui->listWidget_team2->addItem(balance.team2[i].text());
-        }
-        ui->label_team1SR->setText(QString::number(balance.getteam1SR()));
-        ui->label_team2SR->setText(QString::number(balance.getteam2SR()));
+    if(balance->getsize()==12){
+        balance->BalanceTeams();
     }
     else{
         QMessageBox a(this);
@@ -41,14 +34,8 @@ void MainWindow::on_pushButton_balance_clicked()
 
 void MainWindow::on_pushButton_add_clicked()
 {
-    if(balance.getsize()<12){
-        balance.addPlayer(ui->lineEdit_name->text(),ui->lineEdit_SR->text().toInt());
-        if(balance.getsize()<=6){
-            ui->listWidget_team1->addItem(ui->lineEdit_name->text()+QString(" ")+ui->lineEdit_SR->text());
-        }
-        else{
-            ui->listWidget_team2->addItem(ui->lineEdit_name->text()+QString(" ")+ui->lineEdit_SR->text());
-        }
+    if(balance->getsize()<12){
+        balance->addPlayer(ui->lineEdit_name->text(),ui->lineEdit_SR->text().toInt());
     }
     else{
         QMessageBox a(this);
@@ -57,4 +44,10 @@ void MainWindow::on_pushButton_add_clicked()
         a.setWindowTitle(QString("Ошибка"));
         a.exec();
     }
+}
+
+void MainWindow::on_comboBox_calcmethod_currentIndexChanged(int index)
+{
+    balance->setcalculatemethod(index);
+    qDebug()<<"Calcmethod:"<<index;
 }

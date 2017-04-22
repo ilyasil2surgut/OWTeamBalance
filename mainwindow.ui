@@ -19,6 +19,12 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="iconSize">
+   <size>
+    <width>50</width>
+    <height>50</height>
+   </size>
+  </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QPushButton" name="pushButton_balance">
     <property name="geometry">
@@ -151,8 +157,11 @@
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
-     <widget class="QWidget" name="">
+     <widget class="QWidget" name="layoutWidget">
       <layout class="QHBoxLayout" name="horizontalLayout">
+       <property name="sizeConstraint">
+        <enum>QLayout::SetDefaultConstraint</enum>
+       </property>
        <item>
         <widget class="QLabel" name="label">
          <property name="text">
@@ -175,8 +184,14 @@
        </property>
       </widget>
       <widget class="QLineEdit" name="lineEdit_SR">
+       <property name="inputMethodHints">
+        <set>Qt::ImhPreferNumbers</set>
+       </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
+       </property>
+       <property name="clearButtonEnabled">
+        <bool>false</bool>
        </property>
       </widget>
      </widget>
@@ -187,17 +202,10 @@
      </property>
     </widget>
    </widget>
-   <zorder>layoutWidget</zorder>
-   <zorder>layoutWidget</zorder>
-   <zorder>listWidget_team1</zorder>
-   <zorder>listWidget_team2</zorder>
+   <zorder>splitter_11</zorder>
+   <zorder>splitter_6</zorder>
+   <zorder>splitter_4</zorder>
    <zorder>pushButton_balance</zorder>
-   <zorder>label_3</zorder>
-   <zorder>label_team1SR</zorder>
-   <zorder>label_4</zorder>
-   <zorder>label_team2SR</zorder>
-   <zorder>label_5</zorder>
-   <zorder>comboBox_calcmethod</zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">

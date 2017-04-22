@@ -15,3 +15,8 @@ QString Player::text()
 {
     return name+QString(" ")+QString::number(mmr);
 }
+
+int Player::getSR()
+{
+    return mmr;
+}

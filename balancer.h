@@ -5,25 +5,27 @@
 #include <array>
 #include <math.h>
 #include <QDebug>
+#include <team.h>
 class Balancer
 {
 public:
-    Balancer();
+    Balancer(Team*,Team*);
     void addPlayer(QString,int);
-    void BalanceTeams(int);
-    void setTeams(unsigned int);
+    void BalanceTeams();
+    void setTeams(unsigned int,QList<Player*>&,QList<Player*>&);
     int getsize();
-    std::array<Player,6> team1;
-    std::array<Player,6> team2;
-    double average(std::array<Player,6>);
+    double average(QList<Player*>);
     double getteam1SR();
     double getteam2SR();
+    void setcalculatemethod(int);
 private:
     int getbit(unsigned int X, int n);
     bool check6bits(int X);
+    QList<Player*> unbalanced;
     int size;
     int calculatemethod;
-    std::array<Player,12> unbalanced;
+    Team* team1;
+    Team* team2;
 };
 
 #endif // BALANCER_H

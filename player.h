@@ -9,8 +9,10 @@ public:
     Player();
     Player(QString, int);
     QString text();
+    int getSR();
     QString name;
     int mmr;
+private:
 };
 
 #endif // PLAYER_H
