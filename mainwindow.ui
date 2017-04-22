@@ -100,6 +100,38 @@
      </property>
     </widget>
    </widget>
+   <widget class="QPushButton" name="pushButton_clear">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>360</y>
+      <width>501</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Очистить всё</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_swap">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>157</y>
+      <width>101</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="text">
+     <string>←Swap→</string>
+    </property>
+   </widget>
    <widget class="QSplitter" name="splitter_3">
     <property name="geometry">
      <rect>
@@ -135,102 +167,84 @@
      </item>
     </widget>
    </widget>
-   <widget class="QSplitter" name="splitter_10">
+   <widget class="QSplitter" name="splitter_6">
     <property name="geometry">
      <rect>
-      <x>30</x>
+      <x>333</x>
       <y>48</y>
-      <width>501</width>
-      <height>341</height>
+      <width>198</width>
+      <height>306</height>
      </rect>
     </property>
     <property name="orientation">
      <enum>Qt::Vertical</enum>
     </property>
-    <widget class="QSplitter" name="splitter_8">
+    <widget class="QListWidget" name="listWidget_team2"/>
+    <widget class="QPushButton" name="pushButton_remove2">
+     <property name="text">
+      <string>Удалить</string>
+     </property>
+    </widget>
+    <widget class="QSplitter" name="splitter_9">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
-     <widget class="QSplitter" name="splitter_7">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-      <widget class="QListWidget" name="listWidget_team1"/>
-      <widget class="QPushButton" name="pushButton_remove">
-       <property name="text">
-        <string>Удалить</string>
-       </property>
-      </widget>
-      <widget class="QSplitter" name="splitter_5">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <widget class="QLabel" name="label_3">
-        <property name="text">
-         <string>Team 1 SR</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_team1SR">
-        <property name="text">
-         <string>SR</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-        </property>
-       </widget>
-      </widget>
-     </widget>
-     <widget class="QPushButton" name="pushButton_swap">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
+     <widget class="QLabel" name="label_4">
       <property name="text">
-       <string>Swap</string>
+       <string>Team 2 SR</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
       </property>
      </widget>
-     <widget class="QSplitter" name="splitter_6">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
+     <widget class="QLabel" name="label_team2SR">
+      <property name="text">
+       <string>SR</string>
       </property>
-      <widget class="QListWidget" name="listWidget_team2"/>
-      <widget class="QPushButton" name="pushButton_remove2">
-       <property name="text">
-        <string>Удалить</string>
-       </property>
-      </widget>
-      <widget class="QSplitter" name="splitter_9">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <widget class="QLabel" name="label_4">
-        <property name="text">
-         <string>Team 2 SR</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_team2SR">
-        <property name="text">
-         <string>SR</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-        </property>
-       </widget>
-      </widget>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
      </widget>
     </widget>
-    <widget class="QPushButton" name="pushButton_clear">
+   </widget>
+   <widget class="QSplitter" name="splitter_7">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>48</y>
+      <width>198</width>
+      <height>306</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+    <widget class="QListWidget" name="listWidget_team1"/>
+    <widget class="QPushButton" name="pushButton_remove">
      <property name="text">
-      <string>Очистить</string>
+      <string>Удалить</string>
      </property>
+    </widget>
+    <widget class="QSplitter" name="splitter_5">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <widget class="QLabel" name="label_3">
+      <property name="text">
+       <string>Team 1 SR</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_team1SR">
+      <property name="text">
+       <string>SR</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
     </widget>
    </widget>
    <zorder>splitter_11</zorder>
