@@ -28,18 +28,21 @@ void Balancer::addPlayer(QString str, int n)
 void Balancer::BalanceTeams()
 {
     if (size==12){
-        double bestdifference=5000;
         QList<Player*> tempteam1,tempteam2;
         unsigned int matrix=63;
         setTeams(matrix,tempteam1,tempteam2);
-        bestdifference=abs(average(tempteam1)-average(tempteam2));
-        double difference;
+        double bestdifference=abs(average(tempteam1)-average(tempteam2));
+        double difference=bestdifference;
+        qDebug()<<"Balancing"<<difference;
+        team1->setlist(tempteam1);
+        team2->setlist(tempteam2);
         while(matrix<64512){
             matrix++;
             if(check6bits(matrix)){
                 setTeams(matrix,tempteam1,tempteam2);
                 difference=abs(average(tempteam1)-average(tempteam2));
                 if(difference<bestdifference){
+                    qDebug()<<"New best "<<matrix<<difference;
                     bestdifference=difference;
                     team1->setlist(tempteam1);
                     team2->setlist(tempteam2);
